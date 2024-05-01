@@ -4,20 +4,21 @@ const authrouter = require("./router/authrouter.js");
 const uploadrouter = require("./router/uploadrouter.js");
 const findApplicant = require("./router/findApplicantrouter.js");
 const dotenv = require("dotenv");
-const cors = require('cors');
-dotenv.config('./.env');
-const morgan = require('morgan');
-
+const cors = require("cors");
+const morgan = require("morgan");
 const app = express();
 
+dotenv.config("./.env");
 app.use(express.json());
-app.use(morgan('common'));
+app.use(morgan("common"));
 dotenv.config("./.env");
 
-app.use(cors({
-  Credential: true,
-  origin: 'http://localhost:3000'
-}))
+app.use(
+  cors({
+    Credential: true,
+    origin: "http://localhost:3000",
+  })
+);
 app.get("/", (req, res) => {
   res.send("Hello from server");
 });

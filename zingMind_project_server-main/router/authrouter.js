@@ -1,8 +1,8 @@
-const authController = require("../controller/authController.js");
+const {signUpController,loginController} = require("../controller/authController.js");
 const express = require('express');
 const Router = express.Router();
-Router.post("/signup", authController.signupcontroller);
-Router.post("/login", authController.loginController);
+Router.post("/signup",signUpController);
+Router.post("/login", loginController);
 const requireUser = require('../MiddleWare/require.js');
 
 
